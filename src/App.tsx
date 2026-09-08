@@ -44,7 +44,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="px-4 py-6">
-          <div className={`px-3 py-2 rounded-md mb-6 flex items-center gap-2 text-sm font-semibold \${
+          <div className={`px-3 py-2 rounded-md mb-6 flex items-center gap-2 text-sm font-semibold ${
             isSovereign ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
           }`}>
             {isSovereign ? <Shield className="w-4 h-4" /> : <ShieldAlert className="w-4 h-4" />}
@@ -59,13 +59,13 @@ function Layout({ children }: { children: React.ReactNode }) {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 \${
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 ${
                     isActive 
                       ? 'bg-blue-600/10 text-blue-400 font-medium' 
                       : 'hover:bg-slate-800 hover:text-white'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 \${isActive ? 'text-blue-400' : 'text-slate-500'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-blue-400' : 'text-slate-500'}`} />
                   {item.label}
                 </Link>
               );

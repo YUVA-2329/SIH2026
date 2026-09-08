@@ -83,7 +83,7 @@ export default function Workspace() {
               body: JSON.stringify({ taskId, format: 'docx' })
           });
           const data = await res.json();
-          alert(`Report generated! Download available at: \${data.url}`);
+          alert(`Report generated! Download available at: ${data.url}`);
       } catch(err) {
           console.error(err);
       }
@@ -148,7 +148,7 @@ export default function Workspace() {
           {documents.map((doc) => (
             <div 
               key={doc.id} 
-              className={`p-3 rounded-lg border text-sm cursor-pointer transition-all \${
+              className={`p-3 rounded-lg border text-sm cursor-pointer transition-all ${
                 selectedDocs.includes(doc.id) 
                   ? 'bg-indigo-50 border-indigo-200 shadow-sm' 
                   : 'bg-white border-neutral-200 hover:border-indigo-100'
@@ -156,13 +156,13 @@ export default function Workspace() {
               onClick={() => toggleDocSelection(doc.id)}
             >
               <div className="flex items-center gap-3">
-                <div className={`p-1.5 rounded-md \${selectedDocs.includes(doc.id) ? 'bg-indigo-100 text-indigo-600' : 'bg-neutral-100 text-neutral-500'}`}>
+                <div className={`p-1.5 rounded-md ${selectedDocs.includes(doc.id) ? 'bg-indigo-100 text-indigo-600' : 'bg-neutral-100 text-neutral-500'}`}>
                   <FileText className="w-4 h-4" />
                 </div>
                 <div className="flex-1 overflow-hidden">
                   <div className="font-medium text-neutral-800 truncate" title={doc.filename}>{doc.filename}</div>
                   <div className="flex items-center gap-2 mt-1">
-                    <span className={`text-xs \${doc.status === 'INDEXED' ? 'text-emerald-600' : 'text-amber-600'}`}>
+                    <span className={`text-xs ${doc.status === 'INDEXED' ? 'text-emerald-600' : 'text-amber-600'}`}>
                       {doc.status}
                     </span>
                   </div>

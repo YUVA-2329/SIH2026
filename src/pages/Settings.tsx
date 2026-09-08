@@ -19,21 +19,21 @@ export default function Settings() {
           <h2 className="text-lg font-semibold text-neutral-800 mb-4">Environment Mode</h2>
           
           <div className="flex gap-4">
-            <div className={`flex-1 p-4 rounded-xl border-2 transition-all \${
+            <div className={`flex-1 p-4 rounded-xl border-2 transition-all ${
               status.mode === 'SOVEREIGN' ? 'border-emerald-500 bg-emerald-50' : 'border-neutral-200 bg-white opacity-50 cursor-not-allowed'
             }`}>
               <div className="flex items-center gap-2 mb-2">
-                <ShieldCheck className={`w-5 h-5 \${status.mode === 'SOVEREIGN' ? 'text-emerald-600' : 'text-neutral-400'}`} />
+                <ShieldCheck className={`w-5 h-5 ${status.mode === 'SOVEREIGN' ? 'text-emerald-600' : 'text-neutral-400'}`} />
                 <h3 className="font-semibold text-neutral-900">Sovereign Mode</h3>
               </div>
               <p className="text-sm text-neutral-600">Strict air-gapped simulation. Network egress is blocked. All models and RAG processes execute locally.</p>
             </div>
 
-            <div className={`flex-1 p-4 rounded-xl border-2 transition-all \${
+            <div className={`flex-1 p-4 rounded-xl border-2 transition-all ${
               status.mode === 'DEVELOPMENT' ? 'border-amber-500 bg-amber-50' : 'border-neutral-200 bg-white opacity-50 cursor-not-allowed'
             }`}>
               <div className="flex items-center gap-2 mb-2">
-                <ShieldAlert className={`w-5 h-5 \${status.mode === 'DEVELOPMENT' ? 'text-amber-600' : 'text-neutral-400'}`} />
+                <ShieldAlert className={`w-5 h-5 ${status.mode === 'DEVELOPMENT' ? 'text-amber-600' : 'text-neutral-400'}`} />
                 <h3 className="font-semibold text-neutral-900">Development Mode</h3>
               </div>
               <p className="text-sm text-neutral-600">Network egress allowed. Connected to external Gemini API for prototyping or when local hardware is insufficient.</p>
