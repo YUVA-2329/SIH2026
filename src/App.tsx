@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Activity, Shield, FileText, Settings, Terminal, ShieldAlert, Cpu } from 'lucide-react';
 import { useAppStore } from './store';
+import { AnimatePresence } from 'motion/react';
+import IntroSplash from './components/IntroSplash';
 
 import Dashboard from './pages/Dashboard';
 import Workspace from './pages/Workspace';
@@ -91,8 +93,13 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const [showIntro, setShowIntro] = useState(true);
+
   return (
     <BrowserRouter>
+      <AnimatePresence>
+        {showIntro && <IntroSplash onComplete={() => setShowIntro(false)} />}
+      </AnimatePresence>
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
