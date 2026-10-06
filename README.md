@@ -9,7 +9,7 @@
 
 ## 🎬 Demo & 📸 Screenshots
 
-![SIH 2026 Prototype Preview](https://via.placeholder.com/800x400?text=SIH+2026+Prototype+Preview)
+
 
 *(Project preview and screenshots demonstrating the core user experience)*
 
